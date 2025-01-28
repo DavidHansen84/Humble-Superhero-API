@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <table class="table" id="heroesTable">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">SuperPower</th>
+          <th scope="col">Humbe Score</th>
+          
+        </tr>
+      </thead>
+      <% superheroes.forEach(function(superhero) { %>
+      <tbody>
+        
+          <tr>
+            <td><%= superhero.name %></td>
+            <td><%= superhero.superpower %></td>
+            <td><%= superhero.humbleScore %></td>
+            
+          </tr>
+            
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>
