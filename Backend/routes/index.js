@@ -6,14 +6,18 @@ var superheroes = [
   { name: "Batman", superpower: "Rich/IQ", humbleScore: 3 },
 ];
 
-/* GET home page. */
+/* GET superheroes page. */
 router.get("/superheroes", function (req, res, next) {
+  // sort superheroes decreasing value of humblescore
   superheroes.sort((x, y) => y.humbleScore - x.humbleScore);
   res.json({ title: "Humble Superheroes", superheroes });
 });
 
+/* POST a new superhero */
 router.post("/superheroes", function (req, res, next) {
   let { name, superpower, humbleScore } = req.body;
+
+  // validations
   try {
     if (!name || !superpower || !humbleScore) {
       return res.status(400).json({
@@ -34,6 +38,7 @@ router.post("/superheroes", function (req, res, next) {
         .status(400)
         .json({ status: "error", error: "Error creating hero" });
     }
+    // add superhero to array
     superheroes.push(newHero);
     res.status(200).json({ result: "Success", addedHero: newHero });
   } catch (err) {

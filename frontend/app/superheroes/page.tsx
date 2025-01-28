@@ -31,6 +31,7 @@ export default function Superhero() {
     fetchSuperheroes();
   }, []);
 
+  // add a superhero
   const handleAddSuperhero = async () => {
     if (!newHero.name || !newHero.superpower || newHero.humbleScore <= 0) {
       alert("Please fill out all fields correctly!");

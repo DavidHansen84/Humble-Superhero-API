@@ -46,3 +46,13 @@ Probably clean it up much more since I used "npx express-generator --view=ejs" t
 ---
 
 Intructions on use
+
+1. Download the reposotory.
+2. Open in vscode or other program.
+3. Open Backend in a new terminal and type "npm i" and then "npm audit fix --force" and lastly "npm run start". (open http://localhost:3000/superheroes to see it running).
+4. Open frontend in a new terminal and type "npm i" and then "npm run dev". (open http://localhost:3001/superheroes to see the page).
+
+Here you can see the page and add superheroes
+
+To test
+Open a new Backend terminal and while the server is still running type "npm run test". (1 test is supposed to pass)
